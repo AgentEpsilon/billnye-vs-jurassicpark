@@ -138,7 +138,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1340655281}
-  - {fileID: 1126626979}
   - {fileID: 578551311}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -171,7 +170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 79795373}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!61 &578551312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -260,7 +259,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: .745098054, b: 1, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -366,12 +365,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1126626976}
-  m_LocalRotation: {x: -1, y: 1.62920685e-07, z: 1.62920685e-07, w: 2.65431496e-14}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1043891003}
-  m_Father: {fileID: 79795373}
+  m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &1126626980
 MonoBehaviour:
