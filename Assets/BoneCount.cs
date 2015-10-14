@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class BoneCount : MonoBehaviour {
+public class ScoreCounter : MonoBehaviour {
 
 	int count;
 	Text score;
@@ -15,6 +15,6 @@ public class BoneCount : MonoBehaviour {
 	
 	public void incCount(){
 		count++;
-		score.text = count.ToString ();
+		score.text = "Bones: " + count.ToString ();
 	}
 }
