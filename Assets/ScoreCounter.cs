@@ -13,8 +13,8 @@ public class BoneCount : MonoBehaviour {
 	}
 
 	
-	public void incCount(){
+	public void incCount(string resource){
 		count++;
-		score.text = count.ToString ();
+		score.text = resource + ": " + count.ToString ();
 	}
 }
