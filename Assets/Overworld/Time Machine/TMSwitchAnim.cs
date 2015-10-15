@@ -11,11 +11,17 @@ public class TMSwitchAnim : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Off")){
-				anim.CrossFade("On", 0f);
-			}else{
-				anim.CrossFade("Off", 0f);
+			if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Off")) {
+				anim.CrossFade ("On", 0f);
+			} else {
+				anim.CrossFade ("Off", 0f);
 			}
+		}
+		if (Input.GetKeyDown (KeyCode.H)) {
+			PlayerDataManager.instance.health -= 1;
+		}
+		if (Input.GetKeyDown (KeyCode.G)) {
+			PlayerDataManager.instance.health += 1;
 		}
 	}
 }

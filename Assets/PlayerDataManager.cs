@@ -1,22 +1,38 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerDataManager : MonoBehaviour {
 
-	public int health { get; private set; }
-	public int maxHealth { get; private set; }
+	public static PlayerDataManager instance;
 
-	public void Damage(int amt){
-		health = Mathf.Max (health - amt, 0);
+	private Slider healthbar;
+
+	public int health { 
+		get{
+			return PlayerPrefs.GetInt ("health");
+		} 
+		set{
+			if(value<0)
+				PlayerPrefs.SetInt("health", Mathf.Max(value, 0));
+			else if(value>maxHealth)
+				PlayerPrefs.SetInt("health", Mathf.Min(value, maxHealth));
+			else
+				PlayerPrefs.SetInt("health", value);
+
+			healthbar.value = health;
+			Debug.Log (health);
+		}
 	}
 
-	public void Heal(int amt){
-		health = Mathf.Min (health + amt, maxHealth);
-	}
+	public readonly int maxHealth = 20;
 
 	void Awake(){
 		DontDestroyOnLoad (gameObject);
-		maxHealth = PlayerPrefs.GetInt("maxHealth", 20);
+		instance = this;
+		healthbar = GameObject.Find ("HealthBar").GetComponent<Slider>();
+		healthbar.minValue = 0;
+		healthbar.maxValue = maxHealth; 
 		health = PlayerPrefs.GetInt ("health", maxHealth);
 	}
 }
