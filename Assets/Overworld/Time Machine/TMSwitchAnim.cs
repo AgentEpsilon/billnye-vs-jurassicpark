@@ -18,10 +18,10 @@ public class TMSwitchAnim : MonoBehaviour {
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.H)) {
-			PlayerDataManager.instance.health -= 1;
+			PDM.instance.health -= 1;
 		}
 		if (Input.GetKeyDown (KeyCode.G)) {
-			PlayerDataManager.instance.health += 1;
+			PDM.instance.health += 1;
 		}
 	}
 }
